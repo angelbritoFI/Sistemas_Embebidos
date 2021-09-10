@@ -1,0 +1,77 @@
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: 05/09/2021
+% Descripción: Tarea 1 sobre Plagio Académico
+% Hecho por: Brito Segura Angel
+                % Tamaño de letra y hoja
+\documentclass[a4paper]{article} %Tipo de documento
+\usepackage[utf8]{inputenc} %Decodificación del documento
+\usepackage[spanish]{babel} %Usar Español
+\usepackage{fullpage} %Paquete para margen de la página
+\usepackage{fancyhdr} %Cambiar pie de página
+\usepackage{lastpage} %Obtener número de páginas
+
+\usepackage[backend=biber, style=apa]{biblatex} %Importar la bibliografía
+\addbibresource{referencias.bib} %Importar el archivo con la bibliografía
+
+% Encabezado y pie de página de todas las hojas
+\cfoot{}
+\rfoot{Página \thepage\hspace{0.1cm}de\hspace{0.11cm}\pageref{LastPage}}
+\fancyhead[R]{}
+\fancyhead[L]{}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+% Encabezado y pie de página de la primera hoja
+\fancypagestyle{plain}{
+\fancyhead[R]{}
+\fancyhead[L]{}
+\fancyfoot[R]{Página \thepage\hspace{0.1cm}de\hspace{0.11cm}\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+}
+
+\title{Tarea 1}
+\author{\textbf{Brito Segura Angel}}
+\date{Fecha de entrega: \today}
+
+\begin{document}
+    \pagestyle{fancy} %Estilo de página
+    \maketitle %Poner el título, autor y fecha al documento 
+    \section{Plagio académico}
+    El plagio académico es la apropiación indebida de textos, imágenes, datos, tablas, diseños o gráficos que pertenecen a otros autores; y se presenta cuando el plagiario -estudiante, docente o investigador- utiliza toda esta información en un texto propio sin citarlos adecuadamente, o bien, al no poner las referencias bibliográficas de las fuentes originales que se consultaron (\cite{eticaacademica}). Evidentemente, esta apropiación lleva implícito un engaño, con el cual se hace creer que se realizó el trabajo, el estudio o la investigación de que se trate. En el plagio académico se ven involucrados aspectos éticos, sociales, educativos, culturales y legales, sin perder de vista que incide también en el ámbito económico; se rebasa el ámbito de lo individual para volverse también un problema institucional y social (\cite{plagioyetica}). \\ \\ 
+    El plagio es un atentado, no sólo para la propia investigación, sino también para la calidad formativa que los estudiantes mantendremos a lo largo de nuestra vida profesional, con el peligro de la ``perpetuidad'' en nuestra vida laboral (\cite{presentacionplagio}). Por otro lado, el reconocimiento público al autor es trascendental y motivacional para creación de todo tipo de obras, incluyendo desde luego las intelectuales. Por lo que el plagio académico es pernicioso tanto para quien lo comete como para el desarrollo de la ciencia y técnica en general, ya que inhibe la creatividad del individuo para resolver problemas de manera completamente diferente a la de otros autores. \\ \\ \\ \\
+    Concretamente, la situación que guarda el plagio en la UNAM es muy alarmarte porque no solo trasciende al alumno que haya incurrido en él cuando elaboró un trabajo académico durante sus estudios, sino también al personal académico, a tal grado que se le ha equipararado como un incumplimiento de las obligaciones que la legislación le impone. Aún más alarmante resulta por el hecho de que también se incluye el caso de egresados que presentan obras ajenas como tesis para su examen profesional. \\ \\
+    La imprecisión de las consecuencias jurídicas en la Legislación Universitaria y -por qué no decirlo- muchas veces consentirlo o “dejarlo pasar”, se convierte en un lastre que coadyuva, junto con las nuevas tecnologías de la información y comunicación, a su constante reincidencia. \\ \\ \\ \\
+    Difundir, analizar, debatir, darle continuidad a los distintos Códigos de Ética, pero ante todo aplicar los principios fundamentales que deben guiar el quehacer universitario, con mención específica a la integridad y honestidad académica, se vuelve trascendental  para que todos los miembros de la comunidad universitaria sean transparentes al reconocer el origen y las fuentes de la información que empleen, generen o difundan (\cite{plagioyetica}). \\ \\
+    Me quedo con lo importante que resulta conocer los medios  para  dar  crédito  al autor o a una obra intelectual. Sin embargo, considero que los medios para referenciar o citar deberían ser más asequibles; y que las conductas indebidas no deberían ser condenables en sí mismas, sino que debe proveerse de instrumentos efectivos para “educar y formar” sobre ello.
+    
+    \section{Cuestionario}
+    \begin{enumerate}
+        \item \textit{¿Qué es el plagio?} \\
+        Apropiarse de la obra de otro. Según el Diccionario de la Real Academia Española, plagiar se define como copiar en lo sustancial obras ajenas, dándolas como propias (\cite{definicion}). \\
+        Se comete plagio cuando alguien, distinto a su autor, divulga, publica o reproduce una obra o parte de ella y la presenta como propia (\cite{plagioyetica}). \newline
+        
+        \item \textit{¿Cuál es la diferencia entre plagio y plagio académico?} \\
+        El plagio se presenta por el hecho de atribuirse la obra de otra persona, como si fuese de su autoría, es decir, de su creación; en tanto, el plagio académico es más específico: está comprendido dentro de las denominadas “malas artes académicas” y ocurre cuando no se cita ni se referencia a los autores intelectuales de las obras. Este plagio consiste en copiar ideas, dibujos, o texto ajeno en los trabajos y publicaciones sin la debida cita, por la propia cita indebida (intencionada o no) de los autores o la falta de referencia (\cite{presentacionplagio}). \newline
+        
+        \item \textit{¿Cómo afecta el plagio a la reputación de una institución educativa?} \\
+        El plagio es una conducta contraria a las normas explícitas de una institución, lo que demerita el prestigio de la universidad; es así como una acción individual puede tener consecuencias en el ámbito institucional (\cite{plagioyetica}). \newline
+        
+        \item \textit{De acuerdo con la legislación universitaria, ¿cómo se castiga el plagio en la UNAM?} \\
+        Cuando existe la presunción de plagio, el caso debe ser llevado ante los tribunales universitarios. Si derivado de la investigación se demuestra que el estudiante ha cometido plagio, el castigo puede ser la suspensión hasta por un año, de conformidad a los artículos 95 y 97 del Estatuto General de la UNAM (se contempla lo referente al plagio o ayuda fraudulenta en la realización de pruebas, exámenes, trabajo, tareas, proyectos, etc.). Debe precisarse que las sanciones que deriven de las conductas descritas con anterioridad, son independientes de las responsabilidades que deriven de la legislación común, es decir, que si tal forma de conducirse constituye una falta o un delito del orden común, se podrá presentar el asunto ante la autoridad competente para que resuelva lo que en derecho corresponda (\cite{guiaderecho}). \newline
+        
+        \item \textit{De acuerdo con el código penal, ¿cómo se castiga el plagio en México?} \\
+        En nuestro país, el Código Penal Federal en su Título Vigésimo Sexto: “De los Delitos en Materia de Derechos de Autor”, establece las penas correspondientes a aquellas personas que utilicen de forma dolosa, con fines de lucro o sin la autorización que corresponde, cualquier obra que se encuentre protegida por la Ley Federal del Derecho de Autor. Estas penas son multas o prisión, según corresponda, incluyendo la reparación del daño (\cite{codigo}).\\ \\
+        Concretamente, el artículo 424 del ordenamiento legal citado establece que: ``Se impondrá prisión de seis meses a seis años y de trescientos a tres mil días multa: […] A quien use en forma dolosa, con fin de lucro y sin la autorización correspondiente obras protegidas por la ley federal del derecho de autor" (fracción III); en tanto el artículo 427 del mismo código señala que: ``Se impondrá prisión de seis meses a seis años y de trescientos a tres mil días multa, a quien publique a sabiendas una obra substituyendo el nombre del autor por otro nombre” (\cite{noticia}). \newline
+        
+        \item \textit{El problema de plagio, ¿es aplicable al código fuente del software?} \\
+        Sí. El plagio de código fuente es copiar o más bien reproducir el mismo código fuente sin dar el reconocimiento adecuado al creador original o genuino. Esto incluye adaptar la reproducción mínima y moderada del trabajo de otros o incluir fragmentos del código original en su propio código (\cite{comprobadorplagio}). \newline
+        
+        \item \textit{¿Por qué es importante incluir una licencia con el código fuente del software?} \\
+        Es muy importante debido a que los autores de código fuente, por atribuírseles el derecho intelectual exclusivo de su obra, autorizan a otros usuarios a utilizarlo. Al optar por una licencia se evita confusión o se desanima a alguien a usar el trabajo del creador de software, al no saber exactamente bajo qué condiciones se ha liberado el código fuente (\cite{adminproy}).
+    \end{enumerate}
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \printbibliography %Imprimir bibliografía
+\end{document}
