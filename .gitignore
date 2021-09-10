@@ -1,0 +1,11 @@
+#Archivos de texto
+*.txt
+
+#Archivos a ignorar
+*.png
+*.pdf
+*.epub
+*.docx
+*.xlsx
+*.mp4
+*.url
