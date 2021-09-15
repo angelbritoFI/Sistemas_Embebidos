@@ -3,7 +3,7 @@
 # Version 1.0
 # Date: 13/09/2021
 # Description: Parpadear un led mediante tiempos de espera
-# Físicamente, el led está conectado al GPIO 32 de la Raspberry Pi
+# Físicamente, el led está conectado al pin 32 de la Raspberry Pi
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
@@ -27,11 +27,9 @@ import virtualboard
 # Desactiviar advertencias (descomentar si es implementación en hardware)
 # GPIO.setwarnings(False)
 
-# Configurar la librería Rpi.GPIO para usar el número físico de pin
-GPIO.setmode(GPIO.BOARD)
-
-# Configurar el pin 32 como salida y habilitar en bajo
-GPIO.setup(32, GPIO.OUT, initial=GPIO.LOW)
+#Configuraciones de la librería Rpi.GPIO
+GPIO.setmode(GPIO.BOARD) # Usar el número físico de pin
+GPIO.setup(32, GPIO.OUT, initial=GPIO.LOW) # Habilitar pin 32: como de salida y en bajo
 
 # Ciclo infinito para parpadear un led
 while True:
