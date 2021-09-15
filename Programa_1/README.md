@@ -10,6 +10,11 @@
 | 1.1 | Agregando arreglo para control de pines | 14/09/21 |
 | 1.2 | Todos los leds papardean por tiempos de espera | 14/09/21 |
 
+## Código bisa_marquee.py
+| Versión | Descripción | Fecha |
+| -- | -- | -- |
+| 1.0 | Control de marquesina con tiempos de espera | 14/09/21 |
+
 ### Autor 
 ***Brito Segura Angel***
 
