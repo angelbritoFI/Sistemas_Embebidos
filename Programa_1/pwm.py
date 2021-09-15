@@ -47,10 +47,10 @@ while flag:
 		flag = False
 		print("Valor no permitido :(")
 		pwm.ChangeDutyCycle(0)
-		print("Ciclo de trabajo: 0")
 
 # Detener PWM
 pwm.stop()
+print("PWM terminado")
 
 # Reiniciar todos los puertos para que estén en su estado por defecto (entradas)
 GPIO.cleanup()
