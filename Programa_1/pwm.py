@@ -2,8 +2,8 @@
 # Author: Brito Segura Angel
 # Version 1.0
 # Date: 13/09/2021
-# Description: Papadear un led utilizando PWM por hardware (incorporado por Raspberry Pi)
-# Físicamente, el led está conectado al pin 32
+# Description: Papadear un led utilizando un modulador de pulso de la Raspberry Pi
+# Físicamente, el led está conectado al pin 32 mediante un Array Darlington ULN2003
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1

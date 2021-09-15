@@ -3,7 +3,7 @@
 # Version 1.0
 # Date: 13/09/2021
 # Description: Parpadear un led mediante tiempos de espera
-# Físicamente, el led está conectado al pin 32 de la Raspberry Pi
+# Físicamente, el led está conectado al pin 32 de la Raspberry Pi mediante un Array Darlington ULN2003
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
