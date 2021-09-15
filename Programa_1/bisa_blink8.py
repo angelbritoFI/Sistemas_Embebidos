@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 1.1
+# Version 1.2
 # Date: 14/09/2021
-# Description: Parpadear un led mediante tiempos de espera
-# Físicamente, el led está conectado al pin 32 de la Raspberry Pi mediante un Array Darlington ULN2003
+# Description: Parpadear los 8 leds de la fila mediante tiempos de espera
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
@@ -39,7 +38,9 @@ for p in pin:
 
 # Ciclo infinito para parpadear un led
 while True:
-	sleep(0.5)                 		# Esperar 500ms
-	GPIO.output(pin[0], GPIO.HIGH)	# Prender led
-	sleep(0.5)                 		# Esperar 500ms
-	GPIO.output(pin[0], GPIO.LOW)	# Apagar led
+	sleep(0.5) #Esperar 500ms
+	for p in pin:
+		GPIO.output(p, GPIO.HIGH) #Prender led
+	sleep(0.5) #Esperar 500ms
+	for p in pin:
+		GPIO.output(p, GPIO.LOW) #Apagar led
