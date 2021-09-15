@@ -7,7 +7,8 @@
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 1.0 | Estudio del código blink.py comentándolo | 13/09/21 |
-| 1.1 | Contenido 1-3 | Contenido 2-3 |
+| 1.1 | Agregando arreglo para control de pines | 14/09/21 |
+| 1.2 | Todos los leds papardean por tiempos de espera | 14/09/21 |
 
 ### Autor 
 ***Brito Segura Angel***
