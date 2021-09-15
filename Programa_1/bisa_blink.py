@@ -12,29 +12,30 @@
 # License: MIT
 # ## ###############################################
 
-# Future imports (Python 2.7 compatibility)
+# Importación de future (para compatibilidad con Python 2.7)
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-# Import Raspberry Pi's GPIO control library
+# Importación de la librería de control del GPIO de la Raspberry Pi
 import RPi.GPIO as GPIO
-# Imports sleep functon
+# Importación de la función sleep del módulo time para control mediante tiempos de espera
 from time import sleep
-# Initializes virtual board (comment out for hardware deploy)
-import virtualboard
 
-# Disable warnings
+# Inicialización de placa virtual (comentar si es implementación en hardware)
+import virtualboard
+# Desactiviar advertencias (descomentar si es implementación en hardware)
 # GPIO.setwarnings(False)
-# Set up Rpi.GPIO library to use physical pin numbers
+
+# Configurar la librería Rpi.GPIO para usar el número físico de pin
 GPIO.setmode(GPIO.BOARD)
 
-# Set up pin no. 32 as output and default it to low
+# Configurar el pin 32 como salida y habilitar en bajo
 GPIO.setup(32, GPIO.OUT, initial=GPIO.LOW)
 
-# Blink the led
-while True: # Forever
-	sleep(0.5)                 # Wait 500ms
-	GPIO.output(32, GPIO.HIGH) # Turn led on
-	sleep(0.5)                 # Espera 500ms
-	GPIO.output(32, GPIO.LOW)  # Turn led off
+# Ciclo infinito para parpadear un led
+while True:
+	sleep(0.5)                 # Esperar 500ms
+	GPIO.output(32, GPIO.HIGH) # Prender led
+	sleep(0.5)                 # Esperar 500ms
+	GPIO.output(32, GPIO.LOW)  # Apagar led
