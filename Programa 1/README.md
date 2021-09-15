@@ -3,10 +3,11 @@
 * Repositorio disponible en [Github](https://github.com/angelbritoFI/Sistemas_Embebidos)
 * Control de versiones por cada código utilizado
 
-## Código 
+## Código bisa_blink.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 1.0 | Contenido 1-3 | Contenido 2-3 |
+| 1.0 | Estuio del código comentandolo | 13/09/21 |
+| 1.1 | Contenido 1-3 | Contenido 2-3 |
 
 ### Autor 
 ***Brito Segura Angel***
