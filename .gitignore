@@ -3,6 +3,7 @@
 
 #Archivos a ignorar
 *.png
+*.jpeg
 *.pdf
 *.epub
 *.docx
@@ -10,3 +11,6 @@
 *.ppt
 *.mp4
 *.url
+
+#Carpeta a Ignorar
+RPiVirtualBoard/
