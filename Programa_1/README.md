@@ -13,8 +13,13 @@
 ## Código bisa_marquee.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 1.0 | Control de marquesina con tiempos de espera | 14/09/21 |
-| 1.1 | Control de marquesina con PWM | 15/09/21 |
+| 2.0 | Control de marquesina con tiempos de espera | 14/09/21 |
+| 2.1 | Control de marquesina con PWM | 15/09/21 |
+
+## Código bisa_osblink8.py
+| Versión | Descripción | Fecha |
+| -- | -- | -- |
+| 3.0 | Creación del programa en forma local | 15/09/21 |
 
 ### Autor 
 ***Brito Segura Angel***
