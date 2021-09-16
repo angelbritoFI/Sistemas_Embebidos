@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 4.1
+# Version 4.2
 # Date: 15/09/2021
 # Description: Marquesina de izquierda a derecha para prender los 8 leds en una fila
 

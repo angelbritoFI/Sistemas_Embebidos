@@ -27,13 +27,13 @@
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 4.0 | Creación del código fuente en computadora | 15/09/21 |
-| 4.1 | Eligiendo pines en línea de la tarjeta del simulador en línea | 15/09/21 |
+| 4.1 | Eligiendo pines de la tarjeta del simulador en línea | 15/09/21 |
 | 4.2 | Modificación del ciclo de trabajo para poder observar marquesina | 15/09/21 |
 
-## Código programa.py
+## Código bisa_bcd.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 1.0 | Contenido 1-3 | Contenido 2-3 |
+| 5.0 | Identificación de los últimos 4 pines de la derecha | 15/09/21 |
 
 
 ### Autor 
