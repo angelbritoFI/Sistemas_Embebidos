@@ -28,7 +28,7 @@
 | -- | -- | -- |
 | 4.0 | Creación del código fuente en computadora | 15/09/21 |
 | 4.1 | Eligiendo pines en línea de la tarjeta del simulador en línea | 15/09/21 |
-| 4.2 | Modificación de código para implementación física en el simulador | 15/09/21 |
+| 4.2 |  | 15/09/21 |
 
 ## Código programa.py
 | Versión | Descripción | Fecha |

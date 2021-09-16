@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 4.0
+# Version 4.1
 # Date: 15/09/2021
 # Description: Marquesina de izquierda a derecha para prender los 8 leds en una fila
 
@@ -9,16 +9,14 @@ import RPi.GPIO as GPIO
 # Importación de la función sleep del módulo time para control mediante tiempos de espera
 from time import sleep
 
-# Inicialización de placa virtual (comentar si es implementación en hardware)
-import virtualboard
-# Desactiviar advertencias (descomentar si es implementación en hardware)
-# GPIO.setwarnings(False)
+# Desactiviar advertencias
+GPIO.setwarnings(False)
 
 #Configuraciones de la librería Rpi.GPIO
 GPIO.setmode(GPIO.BOARD) # Usar el número físico de pin
 
 # Declaración de arreglo para mejor control de pines
-pin = [10, 12, 16, 18, 22, 24, 26, 32]
+pin = [21, 23, 27, 29, 31, 33, 35, 37]
 pwm = []
 
 # Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
