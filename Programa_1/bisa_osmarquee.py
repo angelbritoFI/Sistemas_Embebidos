@@ -22,14 +22,14 @@ pwm = []
 # Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
 for p in pin:
 	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
-	pwm.append(GPIO.PWM(p, 1))
+	pwm.append(GPIO.PWM(p, 2))
 
 i = 0 #Inicializar contador para arreglo de pines
 
 # Ciclo infinito para marquesina de 
 while True:		
-	pwm[i].start(30) #Establecer el ciclo de trabajo inicial
-	sleep(0.5) #Esperar 500ms
+	pwm[i].start(50) #Establecer el ciclo de trabajo inicial
+	sleep(1) #Esperar 1 ms
 	# Apagar LED
 	pwm[i].ChangeDutyCycle(0)
 	pwm[i].stop()		
