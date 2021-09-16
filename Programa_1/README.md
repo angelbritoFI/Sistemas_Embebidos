@@ -35,6 +35,9 @@
 | -- | -- | -- |
 | 5.0 | Identificación de los últimos 4 pines de la derecha | 15/09/21 |
 | 5.1 | Agregando control con PWM para los 4 pines | 15/09/21 |
+| 5.2 | Codificación de entero a bits | 15/09/21 |
+| 5.3 | Control de valor de entrada para el display de 7 segmentos | 15/09/21 |
+| 5.4 | Mostrando bits enviados al decodificador BCD a leds con PWM | 15/09/21 |
 
 
 ### Autor 
