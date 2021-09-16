@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 1.0
-# Date: 14/09/2021
-# Description: Parpadear un led mediante tiempos de espera
-# Físicamente, el led está conectado al pin 32 de la Raspberry Pi mediante un Array Darlington ULN2003
+# Version 1.1
+# Date: 15/09/2021
+# Description: Marquesina de izquierda a derecha para prender los 8 leds
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
@@ -32,19 +31,22 @@ GPIO.setmode(GPIO.BOARD) # Usar el número físico de pin
 
 # Declaración de arreglo para mejor control de pines
 pin = [10, 12, 16, 18, 22, 24, 26, 32]
+pwm = []
 
-# Habilitar los pines con LED como de salida y en bajo
+# Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
 for p in pin:
 	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
+	pwm.append(GPIO.PWM(p, 1))
 
 i = 0 #Inicializar contador para arreglo de pines
 
-# Ciclo infinito para parpadear un led
-while True:
-	sleep(0.5)                 		# Esperar 500ms
-	GPIO.output(pin[i], GPIO.HIGH)	# Prender led
-	sleep(0.5)                 		# Esperar 500ms
-	GPIO.output(pin[i], GPIO.LOW)	# Apagar led
+# Ciclo infinito para marquesina de 
+while True:		
+	pwm[i].start(30) #Establecer el ciclo de trabajo inicial
+	sleep(0.5) #Esperar 500ms
+	# Apagar LED
+	pwm[i].ChangeDutyCycle(0)
+	pwm[i].stop()		
 	if i < 7:
 		i = i + 1
 	else:

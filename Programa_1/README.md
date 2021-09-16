@@ -14,6 +14,7 @@
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 1.0 | Control de marquesina con tiempos de espera | 14/09/21 |
+| 1.1 | Control de marquesina con PWM | 15/09/21 |
 
 ### Autor 
 ***Brito Segura Angel***
