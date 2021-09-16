@@ -29,6 +29,12 @@ GPIO.setmode(GPIO.BOARD)
 
 # Declaración de arreglo para mejor control de pines
 pin = [22, 24, 26, 32]
+pwm = []
+
+# Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
+for p in pin:
+	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
+	pwm.append(GPIO.PWM(p, 1))
 
 # Configurar pines 36, 38, 40 y 37 como salida y habilitar en bajo
 GPIO.setup(36, GPIO.OUT, initial=GPIO.LOW)
@@ -42,6 +48,7 @@ def bcd7(num):
 	GPIO.output(38, GPIO.HIGH if (num & 0x00000002) > 0 else GPIO.LOW )
 	GPIO.output(40, GPIO.HIGH if (num & 0x00000004) > 0 else GPIO.LOW )
 	GPIO.output(37, GPIO.HIGH if (num & 0x00000008) > 0 else GPIO.LOW )
+	
 
 # Request a number and send it to the display
 flag = True

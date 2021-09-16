@@ -2,7 +2,7 @@
 *.txt
 
 #Videos evidencia
-*.ogv
+programa*.ogv
 *.mp4
 
 #Archivos a ignorar

@@ -34,6 +34,7 @@
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 5.0 | Identificación de los últimos 4 pines de la derecha | 15/09/21 |
+| 5.1 | Agregando control con PWM para los 4 pines | 15/09/21 |
 
 
 ### Autor 
