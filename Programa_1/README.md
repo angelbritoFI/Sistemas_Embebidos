@@ -19,7 +19,9 @@
 ## Código bisa_osblink8.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 3.0 | Creación del programa en forma local | 15/09/21 |
+| 3.0 | Creación del programa en computadora | 15/09/21 |
+| 3.1 | Eligiendo pines al azar de la tarjeta del simulador en línea | 15/09/21 |
+| 3.2 | Modificación de código para implementación física (simulada) | 15/09/21 |
 
 ### Autor 
 ***Brito Segura Angel***
