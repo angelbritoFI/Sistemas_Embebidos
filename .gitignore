@@ -1,6 +1,10 @@
 #Archivos de texto
 *.txt
 
+#Videos evidencia
+*.ogv
+*.mp4
+
 #Archivos a ignorar
 *.png
 *.jpeg
@@ -9,7 +13,6 @@
 *.docx
 *.xlsx
 *.ppt
-*.mp4
 *.url
 
 #Carpeta a Ignorar
