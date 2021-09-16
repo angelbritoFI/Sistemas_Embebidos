@@ -36,7 +36,7 @@ pin = [10, 12, 16, 18, 22, 24, 26, 32]
 for p in pin:
 	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
 
-# Ciclo infinito para parpadear un led
+# Ciclo infinito para parpadear los leds
 while True:
 	sleep(0.5) #Esperar 500ms
 	for p in pin:
