@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 1.1
+# Version 2.1
 # Date: 15/09/2021
 # Description: Marquesina de izquierda a derecha para prender los 8 leds
 
@@ -31,6 +31,8 @@ GPIO.setmode(GPIO.BOARD) # Usar el número físico de pin
 
 # Declaración de arreglo para mejor control de pines
 pin = [10, 12, 16, 18, 22, 24, 26, 32]
+
+# Inicialización del arreglo para control por PWM
 pwm = []
 
 # Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
@@ -40,7 +42,7 @@ for p in pin:
 
 i = 0 #Inicializar contador para arreglo de pines
 
-# Ciclo infinito para marquesina de 
+# Ciclo infinito para marquesina de izquierda a derecha
 while True:		
 	pwm[i].start(30) #Establecer el ciclo de trabajo inicial
 	sleep(0.5) #Esperar 500ms

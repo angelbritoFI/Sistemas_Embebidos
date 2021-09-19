@@ -20,14 +20,14 @@
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 3.0 | Creación del programa en computadora | 15/09/21 |
-| 3.1 | Eligiendo pines al azar de la tarjeta del simulador en línea | 15/09/21 |
+| 3.1 | Eligiendo pines de la tarjeta del simulador en línea | 15/09/21 |
 | 3.2 | Modificación de código para implementación física (simulada) | 15/09/21 |
 
 ## Código bisa_osmarquee.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 4.0 | Creación del código fuente en computadora | 15/09/21 |
-| 4.1 | Eligiendo pines de la tarjeta del simulador en línea | 15/09/21 |
+| 4.1 | Eligiendo pines en fila de la tarjeta del simulador en línea | 15/09/21 |
 | 4.2 | Modificación del ciclo de trabajo para poder observar marquesina | 15/09/21 |
 
 ## Código bisa_bcd.py

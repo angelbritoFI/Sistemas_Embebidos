@@ -3,7 +3,7 @@
 # Version 5.4
 # Date: 15/09/2021
 # Description: Controlar un display mediante el decodificador BCD a 7 segmentos
-#				Mostrar en los últimos 4 leds, el código enviado al driver 74LS47
+#				Mostrar, en los últimos 4 leds, el código enviado al driver 74LS47
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
 # -*- coding: utf-8 -*-
@@ -29,6 +29,8 @@ GPIO.setmode(GPIO.BOARD)
 
 # Declaración de arreglo para mejor control de pines
 pin = [32, 26, 24, 22]
+
+# Inicialización del arreglo para control por PWM
 pwm = []
 
 # Habilitar los pines con LED como de salida, en bajo e inicializar PWM a una frecuencia de 1 Hz
@@ -36,7 +38,7 @@ for p in pin:
 	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
 	pwm.append(GPIO.PWM(p, 1))
 
-#Establecer el ciclo de trabajo inicial
+#Establecer el ciclo de trabajo inicial en 0 para todos los leds
 for v in pwm:
 	v.start(0)
 
@@ -66,16 +68,15 @@ def bcd7(num):
 		else: #Apagar led
 			pwm[i].ChangeDutyCycle(0)
 
-# Request a number and send it to the display
 flag = True
 while flag:
 	try:
 		# Solicitar un número y enviarlo al display de 7 segmentos
 		num = int(input("Ingresa un número entero entre 0 y 15: "))
 		if num > 15:
-			raise #Levantar una excepción
+			raise #Levantar una excepción si no es el número deseado
 		bcd7(num)		
-	# Detener con el shortcut CTRL+C o con una excepción
+	# Detener con el atajo CTRL+C o con una excepción
 	except:
 		flag = False
 		print("Valor no permitido :(")
