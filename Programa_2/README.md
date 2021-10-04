@@ -6,9 +6,13 @@
 ## Código bisa_led_manager.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 1.0 | Estudio del código blink.py comentándolo | 01/10/21 |
-| 1.1 | Agregando arreglo para control de pines | 14/09/21 |
-| 1.2 | Todos los leds papardean por tiempos de espera | 14/09/21 |
+| 1.0 | Estudio del código dado de ejemplo | 01/10/21 |
+| 1.1 | Agregando código a la función leds | 03/10/21 |
+| 1.2 | Desplegando número tocado en la interfaz al display de 7 segmentos | 03/10/21 |
+| 1.3 | Creando la marquesina derecha con ciclo infinito | 03/10/21 |
+| 1.4 | Modificando maqruesina derecha para un solo ciclo | 03/10/21 |
+| 1.5 | Agregando código a la función marquee_left | 03/10/21 |
+| 1.6 | Llamando a las funciones creadas para la nueva marquesina | 03/10/21 |
 
 
 ### Autor 

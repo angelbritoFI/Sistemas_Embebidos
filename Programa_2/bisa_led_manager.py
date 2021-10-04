@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 1.2
+# Version 1.6
 # Date: 03/10/2021
-# Description: Controlar los leds de la GPIO
+# Description: Controlar los leds de la GPIO a través de una interfaz web remota
 
 # ## ###############################################
 # Fundamentos de Sistemas Embebidos, Semestre 2022-1
@@ -36,15 +36,14 @@ pin = [10, 12, 16, 18, 22, 24, 26, 32]
 for p in pin:
 	GPIO.setup(p, GPIO.OUT, initial=GPIO.LOW)
 
-# Configurar pines 36, 38, 40 y 37 como salida y habilitar en bajo (para el display de 7 segmentos)
+# Configurar pines 36, 38, 40 y 37 como salida y habilitar en bajo 
+# Necesario para controlar el display de 7 segmentos
 GPIO.setup(36, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(38, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(40, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(37, GPIO.OUT, initial=GPIO.LOW)
 
-""" Enciende el leds especificados en num, apagando los demás
-	(To be developed by the student)
-"""
+# Función que enciende el led especificado en num, apagando los demás
 def leds(num):	
 	for i in range(len(pin)):
 		if (i == num):
@@ -52,9 +51,10 @@ def leds(num):
 		else:
 			GPIO.output(pin[i], GPIO.LOW) #Apagar led
 
-""" Activa el modo marquesina
-	type toma tres valores: left, right y pingpong
-	(To be developed by the student)
+"""
+Función que activa el tipo de marquesina a mostrar:
+- Puede ser de tres tipos: left (izquierda), right (derecha) y ping-pong
+- Si no se especifica, por defecto será ping-pong
 """
 def marquee(type='pingpong'):
 	switcher = {
@@ -66,9 +66,8 @@ def marquee(type='pingpong'):
 	if func:
 		func()
 
-"""	Despliega en número proporcionado en el display de siete segmentos.
-	(To be developed by the student)
-"""
+
+# Función que despliega el número proporcionado (num) en el display de siete segmentos
 def bcd(num):
 	# Conversión de entero a bits
 	bit = []
@@ -82,7 +81,7 @@ def bcd(num):
 	GPIO.output(40, GPIO.HIGH if bit[2] > 0 else GPIO.LOW )
 	GPIO.output(37, GPIO.HIGH if bit[3] > 0 else GPIO.LOW )
 
-""" Activa el modo marquesina continua a la izquierda"""
+""" Activa el modo marquesina a la izquierda """
 def _marquee_left():
 	i = 7 #Contador auxiliar
 	while i >= 0:
@@ -91,7 +90,7 @@ def _marquee_left():
 		GPIO.output(pin[i], GPIO.LOW) #Apagar led
 		i = i - 1
 
-""" Activa el modo marquesina continua a la derecha"""
+""" Activa el modo marquesina a la derecha """
 def _marquee_right():
 	i = 0 #Contador auxiliar
 	while i < 8:
@@ -100,9 +99,8 @@ def _marquee_right():
 		GPIO.output(pin[i], GPIO.LOW) #Apagar led
 		i = i + 1
 		
-""" Activa el modo marquesina ping-pong"""
+""" Activa el modo marquesina ping-pong """
 def _marquee_pingpong():
-	# Llamando funciones creadas anteriormente
+	# Llamando funciones creadas anteriormente para el comportamiento deseado
 	_marquee_right()
-	_marquee_left()	
-
+	_marquee_left()
