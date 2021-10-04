@@ -66,7 +66,6 @@ def marquee(type='pingpong'):
 	if func:
 		func()
 
-
 # Función que despliega el número proporcionado (num) en el display de siete segmentos
 def bcd(num):
 	# Conversión de entero a bits
@@ -81,7 +80,7 @@ def bcd(num):
 	GPIO.output(40, GPIO.HIGH if bit[2] > 0 else GPIO.LOW )
 	GPIO.output(37, GPIO.HIGH if bit[3] > 0 else GPIO.LOW )
 
-""" Activa el modo marquesina a la izquierda """
+# Función que activa el modo marquesina a la izquierda
 def _marquee_left():
 	i = 7 #Contador auxiliar
 	while i >= 0:
@@ -90,7 +89,7 @@ def _marquee_left():
 		GPIO.output(pin[i], GPIO.LOW) #Apagar led
 		i = i - 1
 
-""" Activa el modo marquesina a la derecha """
+# Función que activa el modo marquesina a la derecha
 def _marquee_right():
 	i = 0 #Contador auxiliar
 	while i < 8:
@@ -99,7 +98,7 @@ def _marquee_right():
 		GPIO.output(pin[i], GPIO.LOW) #Apagar led
 		i = i + 1
 		
-""" Activa el modo marquesina ping-pong """
+# Función que activa el modo marquesina ping-pong
 def _marquee_pingpong():
 	# Llamando funciones creadas anteriormente para el comportamiento deseado
 	_marquee_right()
