@@ -5,17 +5,22 @@
 *.ogv
 *.mp4
 
-#Archivos a ignorar
+#Archivos de imagen
 *.png
 *.jpeg
+
+#Documentos
 *.pdf
 *.epub
 *.docx
 *.xlsx
 *.ppt
+
+#Links en Windows
 *.url
 
-#Carpeta a Ignorar
+#Carpetas a Ignorar
 RPiVirtualBoard/
 Información/
 FSEm/
+Proyecto Final/
