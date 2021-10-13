@@ -1,0 +1,29 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: 10/10/2021
+% Descripción: Configuración de página y documento en general
+% Hecho por: Brito Segura Angel
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Archivo principal de LaTeX
+%!TEX root = ../main.tex
+
+\makeatletter %Utilizar referencias con @
+%Configuración de los hipervínculos y metadatos del PDF
+\hypersetup {
+	hidelinks,
+	colorlinks=true,
+	linkcolor=black, %pone negro a la referencia de página, ver si no afecta en otros lados
+	filecolor=OliveGreen, %\href{run:./file.txt}{File.txt}
+	urlcolor=RoyalPurple,
+	citecolor=blue,
+	pdfauthor={\@author},
+	pdftitle={\@title},
+%	pdfpagemode=FullScreen,
+	pdfsubject={Fundamentos de Sistemas Embebidos},
+	pdfkeywords={documental, big tech},
+	pdfproducer={Overleaf},
+	pdfcreator={pdflatex}
+}
+\makeatother %Regresar a la configuración normal

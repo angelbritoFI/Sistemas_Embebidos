@@ -1,0 +1,76 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: 10/10/2021
+% Descripción: Organizador gráfico del documental The Social Dilemma
+% Hecho por: Brito Segura Angel
+% Idea tomada de:
+% Simple poster (portrait)
+% Author: Sofia Jijon (https://sjijon.github.io)
+% Latest Version: https://github.com/sjijon/TeX-templates/tree/main/Tikzposter%20posters/Simple%20poster
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Raíz del proyecto (este archivo)
+%!TEX root = ./main.tex
+% Archivo de referencias bibliográficas
+%!TEX root = ./referencias.bib
+
+\documentclass[a0paper,portrait,margin=0pt, colspace=24pt,subcolspace=0pt,blockverticalspace=36pt,innermargin=50pt]{tikzposter}
+
+% Paquetes (importación de librería)
+\input{./config/packages}
+% Macros (creación de nuevos comandos y entornos)
+\input{./config/macros}
+
+\title{Tarea 2: \textit{The Social Dilemma}}
+\author{\textnc{Brito Segura Angel}}
+\institute{Fecha de entrega: \today}
+
+%Configuraciones del documento (cambios a nivel documento)
+\input{./config/document}
+
+\begin{document}
+    \maketitle[width=0.96\linewidth,titletoblockverticalspace=36pt,linewidth=0,roundedcorners=10]
+    \begin{columns}
+        %Columna izquierda
+        \column{0.5}
+        % Bloque i)
+        \block[titleleft,roundedcorners=16]{Algoritmos de Big Tech}{
+        	La variables que tratan de maximizar estos algoritmos son las deficiencias de la propia humanidad para poder generar dependencia y adicción, explotan el individualismo para que la gente se aísle y pueda ser un gran consumir rodeado de miedo en esta política capitalista. Al igual que las demás corporaciones, otra variable que buscan maximizar es el beneficio económico de cada una de sus acciones, sin pensar en las consecuencias que traen a la humanidad. \\ \\
+        	Estos algoritmos buscan tener la mayor seguridad posible en sus sistemas, lo que genera confianza en el mercado y así tener grandes inversionistas como patrocinadores. Esta seguridad la logran cuando les otorgamos nuestra privacidad (de manera inconsciente) como usuarios y los algoritmos realizan un control mental mediante anuncios publicitarios, con engaño y manipulación, principalmente al sector más vulnerable, los adolescentes \cite{zimbardo2014}. En estos últimos se maximiza la necesidad de pertenencia, los algoritmos realizan técnicas para hacer crecer la red (invitaciones) y los convierten en consumidores potenciales. Las redes sociales están optimizadas para tener éxito al costo que sea, por lo que maximiza los intereses de cada usuario creando polarización social, deshumanización y violencia; buscan convencerte y generar tendencias para sentirte identificado, perteneciente a este mundo virtual donde, unos pocos inversionistas, mueven los hilos y el giro de la historia actual.
+        }
+        % Bloque iii)
+        \block[titleleft,roundedcorners=16]{Objetivos de las redes sociales}{
+        	Se convirtieron en un fenómeno debido a que buscan nuestra atención, intentan captarla el mayor tiempo posible con lo que se genera una conducta adictiva a estas tecnologías. Utilizan las emociones negativas de cada persona (como la soledad y depresión) para tenernos totalmente controlados y así saber exactamente todo de nosotros. Con este dominio, sus patrocinadores (corporaciones privadas y públicas), pueden controlar lo que pensamos, sentimos y/o hacemos. Las redes sociales crearon un nuevo modelo de negocio: modelo publicitario, con lo que te hacen creer que es ``gratuita'' su uso, pero en realidad uno se vuelve su producto principal: venden a sus usuarios y nos cambian a sus intereses, debido a la creación de modelos que predigan nuestras acciones, teniendo un control social y creando una dependencia (adicción) a estar conectado todo el tiempo. Explotan la propia biología humana con técnicas psicológicas que permiten cambiar nuestro comportamiento y forma de actuar al generarnos hormonas como la dopamina. Utilizan el engaño para crear realidades a cada individuo, lo que hace que cada uno escuche, lo que los cálculos realizados definen que es perfecto para cada uno; generando división con sus semejantes y el mundo entero, en el que uno siempre tiene la razón y los demás están equivocados. Esto genera inseguridad, temores, soledad y sentirte incómodo en tu medio, por lo que atrofian el actuar humano para lidiar sus propios problemas y solo nos centran en el interés comercial de estas empresas. Además, con este engaño, crean un modelo de desinformación con fines de lucro trayendo consigo las noticias falsas al mejor comprador.
+        }
+        
+        %Columna derecha
+        \column{0.5}
+        % Bloque ii)
+        \block[titleleft,roundedcorners=16]{¿Legislación actual?}{
+        	Los desarrolladores dejaron estas empresas del Big Tech debido a que se desvirtúo el ayudar a la gente, esto es por el modelo de negocios demasiado ambicioso, que genera grandes cantidades de dinero con tan solo un clic. Se dieron cuenta que juegan con la salud mental y les preocupa que están generando futuros humanos a escala, construyéndolos al modo deseado, trayendo consigo un gran poder sobre toda la humanidad. Ellos observaron este poder corrupto, por lo que decidieron liberarse y solicitaron un rediseño ético de todas estas redes creadas hasta el momento, sin embargo, no fueron tomados en cuenta. Este cambio, era necesario incluso para ellos mismos: no podían vivir sin las redes sociales, les quitaban de atender lo que realmente era su vida. Tienen temor de que no existe una supervisión humana, por lo tanto no hay motivos éticos ni morales en el tratamiento de toda la información y ejecución de los algoritmos que la conforman, así mismo, piensan que el mundo debe conocer cómo están hechas para que así la humanidad despierte ante este gran problema invisible para muchos.\\ \\
+        	Actualmente no existen protecciones a los usuarios ni regulaciones sobre todas estas tecnologías, por lo que estos desarrolladores están impulsando nuevas normas y leyes que las controlen ya que ellas mismas no se controlan al no buscar el bien común y solo centrase en la mayor ganancia. 
+        }
+        % Bloque iv)
+        \block[titleleft,roundedcorners=16]{Internet of Things}{
+        	Con la información expuesta en este documental, se hace visible que todos nuestros datos son sumamente importantes y manipulados por esta gran industria. Actualmente, estos dispositivos de IoT pueden parecer inofensivos al tener información poco sensible pero, como se observa con las redes sociales, pueden crecer exponencialmente y se pudieran convertir en dispositivos ideales para el capitalismo de vigilancia, con lo que se viola por completo la privacidad de cada persona, debido al rastreo infinito que provocarían. \\ \\
+        	El principal peligro, es que pudieran controlar todo a nuestro alrededor, daríamos nuestros datos para ser tratados a merced de estos algoritmos de Inteligencia Artificial y sobre todo como ya se plantea en la actualidad: los datos serán el nuevo oro negro del siglo XXI. Con el avance de la Ciencia de Datos se vuelven información tangible, al realizar análisis automatizado de toda esta Big Data que se va generar, con lo que quedaría expuesta al mejor comprador. Si no hay una regulación sobre la información que recaban estos dispositivos, se convertirán en otro dilema en este mundo que colapsa de acuerdo a los escritores \citeauthor{video}: hemos perdido el rumbo hacia el bien común y la humanidad cada día está más polarizada (gracias a las redes sociales). El exponencial crecimiento de los dispositivos IoT se vuelven en un problema a nivel global que requiere suma atención, ya que se pueden convertir en otra herramienta de persuasión y control.
+        }
+    \end{columns} 
+    
+    %Pie de organizador gráfico
+    \block[titlecenter,roundedcorners=16]{Conclusiones}{
+        Con el avance de la tecnología, se han creado más y más redes sociales de diversas índoles, no solo las expuestas en este documental, con lo que permean en cada aspecto de nuestra vida: laboral (LinkedIn), educativo (Edmodo), sentimental (Tinder), entre otros; esto nos pone en un peligro inminente, ya que no están reguladas o controladas de manera externa y objetiva; además, cada día se vuelven más y más poderosas con la información que nosotros les damos (de manera implícita o explícita). Si bien la solución planteada pudiera ser adecuada, concuerdo con el filósofo Giorgio Agamben que nos plantea lo siguiente acerca de como esta tecnología (dispositivos) está intrínsecamente en el ser humano: \enquote{...¿Entonces, de qué manera nos podemos oponer a esta situación, qué estrategia debemos adoptar en nuestro cuerpo a cuerpo cotidiano frente a estos dispositivos? No se trata simplemente de destruirlos ni, como sugieren algunos ingenuos, de utilizarlos con justeza...}\cite{agamben2011}, por lo que considero que más bien se debería de optar por una sociedad que se controle así misma, en la que la verdadera voz del pueblo sea escuchada, tomada en cuenta y tenga la conciencia de no alimentar a estos grandes sistemas informáticos, que lo único que desean es poder manipular y controlar todo lo de su alrededor.\\ \\
+        A mi parecer, el manejo de la información es completamente objetiva, a pesar de que la información expuesta afecta indirectamente a la empresa que lo produjo (Netflix), sin embargo, considero que un mejor documental es \href{https://youtu.be/zpQYsk-8dWg}{The Corporation} para entender, no solo el problema de las redes sociales, sino también problemas que nos afectan a la sociedad: la banalidad del mal \cite{bauman2015} y como todas estas corporaciones han transformado y daño a la humanidad a su conveniencia. En este documental, se muestra como las corporaciones son parte intrínseca de la sociedad y que, como las redes sociales, hacen muchísimo daño. Finalmente, considero que las corporaciones del Big Tech son completamente responsables del daño causado a la humanidad, por lo deberían de pagar por sus acciones y tratar de enmendar el daño. La sociedad civil debe de poner un alto a todas estas tecnologías antes de que sea demasiado tarde y se salga de control este gran poder que estas corporaciones se han adjudicado y su inconsciencia no les permite ver su responsabilidad moral en todas sus acciones.
+    }
+    
+    \block[titleleft,roundedcorners=16]{}{
+        \small
+        \begin{minipage}{\linewidth}
+        	\nocite{*}
+        	\bibliographystyle{unsrtnat}
+        	\bibliography{referencias}
+        \end{minipage}
+    }
+
+\end{document}

@@ -1,0 +1,57 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: 10/10/2021
+% Descripción: Creación de nuevos comandos y configuración del póster
+% Hecho por: Brito Segura Angel
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Archivo principal de LaTeX
+%!TEX root = ../main.tex
+
+% Póster
+\tikzposterlatexaffectionproofoff 			
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning}  %Tikz Libraries
+
+% Texto
+\usepackage{helvet} % Sans-Serif
+\renewcommand{\familydefault}{\sfdefault}
+
+% Colores
+\definecolor{MyOrange}{rgb}{0.8, 0.33, 0}
+\definecolor{MyBrown}{rgb}{0.28, 0.20, 0.20}
+\definecolor{MyGreen}{rgb}{0.33, 0.42, 0.18}
+
+% Tema
+\usetheme{Default}
+\definecolorstyle{MyStyle2016}{
+	\definecolor{ColorOne}{named}{MyBrown} 
+	\definecolor{ColorTwo}{named}{MyOrange}
+	\definecolor{ColorThree}{named}{MyGreen}
+}{
+    % Colores para el título
+    \colorlet{titlebgcolor}{ColorOne}
+    \colorlet{titlefgcolor}{white}
+    % Colores para fondo
+    \colorlet{backgroundcolor}{ColorOne!15}
+    \colorlet{framecolor}{ColorOne}
+    % Colores para los bloques
+    \colorlet{blocktitlebgcolor}{white}
+    \colorlet{blocktitlefgcolor}{ColorTwo}
+    \colorlet{blockbodybgcolor}{white}
+    \colorlet{blockbodyfgcolor}{black}
+    % Colores para los bloques centrales
+    \colorlet{innerblocktitlebgcolor}{ColorOne!15}
+    \colorlet{innerblocktitlefgcolor}{black}
+    \colorlet{innerblockbodybgcolor}{ColorOne!15}
+    \colorlet{innerblockbodyfgcolor}{black}
+    % Colores para las notas
+    \colorlet{notebgcolor}{ColorTwo!20}
+    \colorlet{notefgcolor}{ColorTwo}
+    \colorlet{notefrcolor}{ColorTwo}
+ }
+
+% Estilo de color
+\usecolorstyle{MyStyle2016}
+
+\newcommand{\textnc}[1]{\textbf{\textit{#1}}} %Negritas y cursiva
