@@ -6,8 +6,14 @@
 ## Código bisa_temp_srvr.py
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
-| 1.0 | Estudio del código dado de ejemplo | 15/10/21 |
-| 1. |  |  |
+| 1.0 | Estudio del simulador con su código | 15/10/21 |
+| 1.1 | Introduciendo resistencias adecuadas | 16/10/21 |
+| 1.2 | Agregando conversión adecuada a grados Centígrados | 16/10/21 |
+| 1.3 | Resolución del ADC en 10 bits | 16/10/21 |
+| 1.4 | Recibiendo parámetros opcionales por línea de comandos | 17/10/21 |
+| 1.5 | Mostrando temperatura promedio en grados Centígrados | 17/10/21 |
+| 1.6 | Creando el servidor web | 17/10/21 |
+| 1.7 | Enviando bitácora al cliente web | 17/10/21 |
 
 ### Autor 
 ***Brito Segura Angel***
