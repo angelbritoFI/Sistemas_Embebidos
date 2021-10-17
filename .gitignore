@@ -9,6 +9,9 @@
 *.png
 *.jpeg
 
+#Archivos de compilación
+*.out
+
 #Documentos
 *.pdf
 *.epub

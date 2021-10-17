@@ -1,6 +1,7 @@
 # Programa 3
 * **Lectura de datos analógicos via I^2^C en la Raspberry Pi**
-* Repositorio disponible en [Github]()
+* Repositorio disponible en [Github](https://github.com/angelbritoFI/Sistemas_Embebidos/tree/master/Programa_3)
+superindice^3^
 * Control de versiones del código utilizado
 
 ## Código bisa_temperature.py
