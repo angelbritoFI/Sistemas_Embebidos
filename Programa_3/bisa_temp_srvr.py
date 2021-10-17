@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
+# Author: Brito Segura Angel
+# Version 1.0
+# Date: 16/10/2021
+# Description: Leer temperatura del sensor LM35 a través del ADC del Arduino
+#	Este convertidor analógico-digital está conectado como esclavo I2C
+
+# ## ###############################################
+# Fundamentos de Sistemas Embebidos, Semestre 2022-1
 # -*- coding: utf-8 -*-
-# ## #############################################################
-# temperature.py
-#
-# Author:  Mauricio Matamoros
-# Licence: MIT
-# Date:    2020.03.01
-# 
-# Reads temperature from a LM35 interfaced via an Arduino ADC
-# connected as I2C slave.
-#
-# ## #############################################################
+# Autor: Mauricio Matamoros
+# License: MIT
+# ## ###############################################
 
 import smbus2
 import struct
@@ -54,8 +54,17 @@ def log_temp(temperature):
 #end def
 
 def main():
-	# Runs virtual board (comment out for hardware deploy)
-	run_temperature_board(r1=1, r2=10000, p8bits=True)
+	"""
+	Simulación de un sensor de temperatura LM35 en configuración básica acoplado 
+	a un circuito ADC con un divisor de voltaje en Vref+ y Vref− a tierra
+	Parámetros:
+		- Resistencias para la alimentación del Vref+:
+			r1 (por defecto 1 kOhm)
+			r2 (por defecto 1 MOhm)
+		- p8bits: valor booleano que configura el módulo ADC para operar a una 
+				precisión de 8 bits (True) o 10 bits (False)
+	"""
+	run_temperature_board() #Comentar si es una implementación de hardware
 	time.sleep(1)
 
 	while True:
@@ -65,7 +74,6 @@ def main():
 			time.sleep(1)
 		except KeyboardInterrupt:
 			return
-#end def
 
 if __name__ == '__main__':
 	main()
