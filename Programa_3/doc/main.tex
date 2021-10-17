@@ -1,0 +1,68 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: 17/10/2021
+% Descripción: Cuestionario del programa 3
+% Hecho por: Brito Segura Angel
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Raíz del proyecto (este archivo)
+%!TEX root = ./main.tex
+% Archivo de referencias bibliográficas
+%!TEX root = ./referencias.bib
+
+                % Tamaño de hoja y letra (11pt o 12pt -10pt por default-)
+\documentclass[letterpaper,10.5pt]{article} %Tipo de documento
+
+% Paquetes (importación de librerías)
+\input{./config/packages}
+% Macros (creación de nuevos comandos y entornos)
+\input{./config/macros}
+
+\title{Programa 3}
+\author{\textbf{Brito Segura Angel}}
+\date{Fecha de entrega: \today}
+
+%Configuraciones del documento (cambios a nivel documento)
+\input{./config/document}
+
+\begin{document}
+    \pagestyle{fancy} %Estilo de página
+    \maketitle %Poner el título, autor y fecha al documento
+    
+    %Para solo una página, descomentar estas líneas y quitar TODO lo de fancy
+    %\pagestyle{empty} %Quitar paginación
+    %\maketitle
+    %\thispagestyle{empty}
+    
+    \section{Cuestionario}
+    \subsection{¿Cuáles son los valores óptimos para las resistencias comerciales usadas en el divisor de voltaje que alimenta al pin $V_{Ref+}$? Justifique su respuesta e incluya el análisis matemático (cálculos) correspondiente}
+	    Teniendo que un Arduino UNO es alimentado por 5 [V], su pin de $V_{Ref+}$ sería dicho valor y dejando fijo el valor de $R_2$, de acuerdo al divisor de voltaje, se tiene la siguiente fórmula:
+	    \begin{equation}
+			\label{eqn:ec1}
+			V_{out} = \frac{R_2}{10~[k\Omega] + R_2} * 5~[V]
+		\end{equation}
+		El valor de $V_{out}$ depende directamente del rango de lecturas en grados centígrados que se desee obtener del sensor. Para este caso se desea que el rango máximo sea de 150°C, por lo que se puede resolver la \cref{eqn:ec1} para despejar el valor faltante de $R_1$:
+		\begin{equation}
+			\label{eqn:ec2}
+			150[^{\circ} C]* 0.01\left[\frac{V}{^{\circ} C}\right] = \frac{R_2}{10~[k\Omega] + R_2} * 5~[V]
+		\end{equation}
+		Despejando $R_2$ de la \cref{eqn:ec2}:
+		\[
+			1.5 * (10000 + R_2) = 5R_2 \Rightarrow 15000 = 5R_2 - 1.5R_2 \Rightarrow 3.5R_2 = 15000 \Rightarrow R_2 = \frac{15000}{3.5}\approx 4286~[\Omega]
+		\]
+
+		Si bien el valor adecuado para $R_2$ es de $4.2~[k\Omega]$, en el mercado \cite{res_comerciales} no es posible tener una resistencia de este valor, por lo que \textbf{los valores óptimos para resistencias comerciales son: $R_1 = 10~[k\Omega]$ y $R_2 = 3.9~[k\Omega]$} para el divisor de voltaje propuesto para poder ocupar los 1024 valores que nos da este convertidor.\newline
+
+		\subsection{Suponga que se tiene un ADC que puede opera a una frecuencia de hasta 1kHz. ¿Qué estrategia se recomienda para maximizar la presición del sensor? ¿Conviene seguir utilizando el promedio simple u otra técnica de filtrado? ¿Es conveniente reducir la frecuencia de muestreo? Justifique su respuesta}
+		Lozano: \url{https://repositorio.unican.es/xmlui/bitstream/handle/10902/7633/Reducci%c3%b3n%20de%20la%20frecuencia.pdf?sequence=1&isAllowed=y}
+
+		Montoro - Página 5: \url{https://idus.us.es/bitstream/handle/11441/69438/TFM_LOZANO%20FDEZ%20DIEGO.pdf}
+
+		Serrato - Página 33: \url{https://hera.ugr.es/tesisugr/16072595.pdf}
+
+	\hfill \break %Salto de línea	
+	%Agregando fuentes de consulta
+	\bibliographystyle{unsrtnat} %abbrnat es parecido a APA
+	\bibliography{referencias}
+    %\printbibliography %Imprimir bibliografía (si se ocupa bibtex y descomentar lo anterior)
+
+\end{document}
