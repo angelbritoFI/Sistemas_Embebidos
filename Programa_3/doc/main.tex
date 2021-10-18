@@ -28,11 +28,6 @@
     \pagestyle{fancy} %Estilo de página
     \maketitle %Poner el título, autor y fecha al documento
     
-    %Para solo una página, descomentar estas líneas y quitar TODO lo de fancy
-    %\pagestyle{empty} %Quitar paginación
-    %\maketitle
-    %\thispagestyle{empty}
-    
     \section{Cuestionario}
     \subsection{¿Cuáles son los valores óptimos para las resistencias comerciales usadas en el divisor de voltaje que alimenta al pin $V_{Ref+}$? Justifique su respuesta e incluya el análisis matemático (cálculos) correspondiente}
 	    Teniendo que un Arduino UNO es alimentado por 5 [V], su pin de $V_{Ref+}$ sería dicho valor y dejando fijo el valor de $R_2$, de acuerdo al divisor de voltaje, se tiene la siguiente fórmula:
@@ -53,11 +48,11 @@
 		Si bien el valor adecuado para $R_2$ es de $4.2~[k\Omega]$, en el mercado \cite{res_comerciales} no es posible tener una resistencia de este valor, por lo que \textbf{los valores óptimos para resistencias comerciales son: $R_1 = 10~[k\Omega]$ y $R_2 = 3.9~[k\Omega]$} para el divisor de voltaje propuesto para poder ocupar los 1024 valores que nos da este convertidor.\newline
 
 		\subsection{Suponga que se tiene un ADC que puede opera a una frecuencia de hasta 1kHz. ¿Qué estrategia se recomienda para maximizar la presición del sensor? ¿Conviene seguir utilizando el promedio simple u otra técnica de filtrado? ¿Es conveniente reducir la frecuencia de muestreo? Justifique su respuesta}
-		Lozano: \url{https://repositorio.unican.es/xmlui/bitstream/handle/10902/7633/Reducci%c3%b3n%20de%20la%20frecuencia.pdf?sequence=1&isAllowed=y}
-
-		Montoro - Página 5: \url{https://idus.us.es/bitstream/handle/11441/69438/TFM_LOZANO%20FDEZ%20DIEGO.pdf}
-
-		Serrato - Página 33: \url{https://hera.ugr.es/tesisugr/16072595.pdf}
+		En el mercado actual existen diferentes tipos de ADC, estos dispositivos tienen, como uno de sus principales compromisos, un incremento de la resolucion se hace a costa de perder frecuencia de trabajo y, normalmente, de incrementar el consumo \cite{lozano2017estudio}.\\ \\
+		La funcion de un convertidor es hacer un ``mapeado'' lineal de una tension analógica de entrada a una palabra digital de salida, por lo que la curva de transferencia ideal tiene una forma de escalera con todos los escalones iguales alineados en una lınea recta. Estos escalones hacen que exista un error de cuantizacion, ya que cada palabra de salida representa un rango continuo de valores de tension de entrada \cite{lozano2017estudio}.\\ \\
+		Para maximizar la presición del sensor ADC, se recomienda utilizar los sigma-delta (desarrollados con arquitectura S-D -admite ADC de 24 bits con una resolución p-p de hasta 21.7 bits estables o sin parpadeo-) porque constantemente se obtienen muestras de la entrada analógica y la frecuencia de muestreo es bastante más alta que la banda de interés. También usan conformación de ruido, que empuja el ruido fuera de la banda de interés y lo lleva a una región que no esté siendo usada por el proceso de conversión, lo que reduce aún más el ruido en la banda de interés \cite{ADC_sigma}.\\ \\
+		Es conveniente utilizar el filtro digital debido a que atenúa cualquier señal fuera de la banda de interés. Este filtro tiene múltiples imágenes en la frecuencia de muestreo, por lo tanto, se requieren algunos filtros externos antialiasing. Sin embargo, debido al sobremuestreo, un filtro RC simple de primer orden es suficiente para casi todas las aplicaciones \cite{ADC_sigma}. \\ \\
+		No es conveniente reducir la frecuencia de muestreo, ya que está directamente realacionada con la frecuencia máxima que puede tener la señal a discretizar. Este decremento pudiera producir solapamiento en el espectro (\emph{aliasing}), por lo que la información contenida en la porción de espectro que quede solapada se perderá, y por lo tanto, recuperar la señal analógica original va a ser imposible \cite{bueno2013diseno}.
 
 	\hfill \break %Salto de línea	
 	%Agregando fuentes de consulta
