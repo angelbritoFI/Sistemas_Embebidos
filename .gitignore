@@ -4,6 +4,7 @@
 #Videos evidencia
 *.ogv
 *.mp4
+*.mkv
 
 #Archivos de imagen
 *.png

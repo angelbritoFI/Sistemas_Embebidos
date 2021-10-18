@@ -14,12 +14,11 @@
 
 import smbus2 #Lectura del puerto serial I2C
 import struct #Conversión de datos binarios a objetos que puede leer Python
-# Importación de la función sleep del módulo time para control mediante tiempos de espera
+#Importación de la función sleep y strftime del módulo time para control de tiempos
 from time import sleep, strftime
-# Importación de la función argv del módulo sys para recibir parámetros desde línea de comandos
+#Importación de la función argv del módulo sys para recibir parámetros desde línea de comandos
 from sys import argv
-
-# Inicialización de placa virtual (comentar si es implementación en hardware)
+#Inicialización de placa virtual (comentar si es implementación en hardware)
 from virtualboards import run_temperature_board
 
 # Dirección del dispositivo I2C
@@ -62,13 +61,13 @@ def readTemperature(Varef, resolucion):
 		"""
 		temp = struct.unpack(lectura, msg.buf)[0]
 		temp = temp * (Varef/volt_celsius) #Conversión de valores discretos a °C
-		print('Temperatura registrada por el ADC: {:0.2f}°C'.format(temp))
 		return temp
 	except:
 		return None
 
 # Escritura de la bitácora de temperaturas en archivo externo
 def log_temp(temperature):
+	print('Temperatura (promedio) registrada: {:0.2f}°C'.format(temperature))
 	try:
 		with open(LOG_FILE, 'a') as fp:
 			fp.write('{} {:0.2f}°C\n'.format(strftime("%d/%m/%Y %H:%M:%S"),temperature))
@@ -191,8 +190,7 @@ def main():
 		- p8bits: valor booleano que configura el módulo ADC para operar a una 
 				precisión de 8 bits (True) o 10 bits (False, valor por defecto)
 	"""
-	#Comentar si es una implementación de hardware
-	run_temperature_board(r1, r2, resADC8bits, frec)
+	run_temperature_board(r1, r2, resADC8bits, frec) #Comentar si es una implementación de hardware
 	Vref = 5 * r2/(r2+r1) #Voltaje de referencia del ADC de acuerdo al divisor de voltaje
 	sleep(1) #Esperar 1 segundo
 
@@ -211,5 +209,6 @@ def main():
 			print("\tPrograma terminado")
 			return
 
+# Punto de anclaje de la función main
 if __name__ == '__main__':
 	main()
