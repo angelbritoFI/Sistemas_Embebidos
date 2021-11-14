@@ -1,0 +1,29 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: DD/MM/2021
+% Descripción: Creación de nuevos comandos
+% Hecho por: Brito Segura Angel
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Archivo principal de LaTeX
+%!TEX root = ../main.tex
+
+%Crear un nuevo comando [] -> parámetros y {#} -> referencia de variables recibidas
+\newcommand{\textbi}[1]{\textbf{\textit{#1}}} %Negritas y cursiva
+
+% Encabezado y pie de página de todas las hojas
+\fancyhf{} % Quitar toda la configuración por default
+\rfoot{Página~\thepage~de~\pageref{LastPage}}
+\chead{Grupo 2, Semestre 2022-1}
+\lhead{Fundamentos de Sistemas Embebidos}
+\rhead{\textbi{Brito Segura Angel}}
+\renewcommand{\footrulewidth}{0.0pt}
+
+% Encabezado y pie de página de la primera hoja
+\fancypagestyle{plain}{
+	\fancyhf{} % Quitar toda la configuración por default
+	\rfoot{Página~\thepage~de~\pageref{LastPage}}
+	\renewcommand{\headrulewidth}{0.0pt}
+	\renewcommand{\footrulewidth}{0.0pt}
+}

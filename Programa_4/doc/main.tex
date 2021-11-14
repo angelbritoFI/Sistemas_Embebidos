@@ -1,0 +1,61 @@
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Materia: Fundamentos de Sistemas Embebidos
+% Fecha de creación: DD/MM/2021
+% Descripción: 
+% Hecho por: Brito Segura Angel
+%
+%Para utilizar el estilo unsrtnat, en la terminal del proyecto se ejecuta el siguiente comando:
+% ln -s /usr/share/texlive/texmf-dist/bibtex/bst/natbib/unsrtnat.bst unsrtnat.bst
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Raíz del proyecto (este archivo)
+%!TEX root = ./main.tex
+% Archivo de referencias bibliográficas
+%!TEX root = ./referencias.bib
+
+                % Tamaño de hoja y letra (11pt o 12pt -10pt por default-)
+\documentclass[letterpaper,10.5pt]{article} %Tipo de documento
+
+% Paquetes (importación de librería)
+\input{./config/packages}
+% Macros (creación de nuevos comandos y entornos)
+\input{./config/macros}
+
+\title{Tarea }
+\author{\textbf{Brito Segura Angel}}
+\date{Fecha de entrega: \today}
+
+%Configuraciones del documento (cambios a nivel documento)
+\input{./config/document}
+
+\begin{document}
+    \pagestyle{fancy} %Estilo de página
+    \maketitle %Poner el título, autor y fecha al documento
+    
+    %Para solo una página, descomentar estas líneas y quitar TODO lo de fancy
+    %\pagestyle{empty} %Quitar paginación
+    %\maketitle
+    %\thispagestyle{empty}
+    
+    \section{Introducción}
+	    \textbf{Texto en negritas} \newline
+		\textit{Texto en itálicas o cursivas} \newline
+		\texttt{Texto monoespaciado} \newline
+		\emph{Texto en énfasis} (Varía según tipo de documento) \newline
+		\textsc{Texto en versalles} \newline
+
+    \subsection{Subsección}
+	    Cita de prueba: \cite{libro}\\ %Cita: [número de cita]
+
+		Otra manera de citar: \citet{sitio_web}\\ %Cita: Autor [número de cita]
+
+		Según \citeauthor{cursos_materias}, %Citar al autor de una referencia
+		en el año \citeyear{cursos_materias}\\ %Citar el año
+
+	\hfill \break %Salto de línea
+	%Agregando fuentes de consulta
+	\bibliographystyle{unsrtnat} %abbrnat es parecido a APA
+	\bibliography{referencias}
+    %\printbibliography %Imprimir bibliografía (si se ocupa bibtex y descomentar lo anterior)
+
+\end{document}
