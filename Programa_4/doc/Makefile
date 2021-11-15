@@ -10,7 +10,7 @@ RUBBER= rubber
 # Banderas para siempre generar el archivo con salida estándar PDF
 FLAGS= --force --pdf
 #Nombre del archivo
-FILE= "tarea"
+FILE= "bisa_questionnaire"
 
 #Se llama en automático cada sección de este archivo
 all:
