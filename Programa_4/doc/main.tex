@@ -76,34 +76,11 @@
 			\caption{Relación entre factor de potencia y tiempo de disparo de TRIAC} %Nombre de la tabla
 			\label{tbl:pf/tau} %TODO caption lleva su etiqueta
 		\end{table}
-	\subsection{¿Es posible utilizar éste método de atenuación con otro tipo de lámparas (ej. Fluorescente o LED)? La detección de cruce por cero ¿puede utilizarse para modular la potencia de cargas inductivas?}
-	El interruptor de perilla (\emph{dimmer}) se usa en la iluminación tradicional para tener un control de atenuación en fuentes de luz como lámparas incandescentes ya que consumen excesiva energía este tipo de lámparas. Este método de atenuación no es recomendable para otro tipo lámparas, ya que es posible dañarlas (en sus propias especificaciones indican que no se ocupen para éste própósito) y, con el aumento en el uso de lámparas LED, estos \emph{dimmers} son cada vez más rechazados en la industria y su uso es menor \cite{espinel2018modelacion}.\\ \\
-	La detección de cruce por cero se puede utilizar para modular la potencia de cargas inductivas \cite{lemus2015diseno}, ya que son circuitos electrónicos utilizados en señales de corriente alterna para determinar el momento preciso en que la señal alterna corta el eje. Esta referencia es necesaria para poder establecer un punto de referencia a partir del cual se pueda disparar un tiristor con una señal PWM y así poder modular la potencia de este tipo de cargas \cite{revista}.	En un \emph{dimmer}, este detector de cruce por cero permite ajustes del nivel de poder en la corriente eléctrica, esto es de gran ayuda debido a que la interrupción de la corriente en cualquier otro punto del circuito eléctrico crea un pico de poder potencialmente dañino \cite{pagina_web}.
-	\hfill \break %Salto de línea
+	\subsection{¿Es posible utilizar este método de atenuación con otro tipo de lámparas (ej. Fluorescente o LED)? La detección de cruce por cero, ¿puede utilizarse para modular la potencia de cargas inductivas?}
+	El interruptor de perilla (\emph{dimmer}) se usa en la iluminación tradicional para tener un control de atenuación en fuentes de luz como lámparas incandescentes, ya que este tipo de lámparas consumen excesiva energía. Este método de atenuación no es recomendable para otro tipo lámparas porque puede dañarlas (incluso, sus propias especificaciones indican que no se ocupen para este própósito). Con el aumento en el uso de lámparas LED, el uso de estos \emph{dimmers} es menor y cada vez son más rechazados en la industria \cite{espinel2018modelacion}.\\ \\
+	La detección de cruce por cero se puede utilizar para modular la potencia de cargas inductivas \cite{lemus2015diseno}, ya que son circuitos electrónicos utilizados en señales de corriente alterna para determinar el momento preciso en que se corta el eje por la señal alterna. Esta referencia es necesaria para poder establecer un punto de partida respecto del cual se puede disparar un tristor con una señal PWM y así poder modular la potencia de este tipo de cargas \cite{revista}.	En un \emph{dimmer}, este detector de cruce por cero permite ajustes del nivel de poder en la corriente eléctrica. Esto es de gran ayuda debido a que la interrupción de la corriente en cualquier otro punto del circuito eléctrico crea un pico de poder potencialmente dañino \cite{pagina_web}.
+	\hfill \break %Salto de línea	
 	
-	\subsection{Utilizando algún método de aproximación numérico, aproxime $\tau$($P_f$,$f_L$) para $f_L\in$[50,60]Hz considerando una presición de al menos 5\% respecto al valor ideal}
-	El método a utilizar, será el de bisección dado que se tiene un intervalo [a, b] en el cual se encierra la raíz de la función a aproximar. Por otra parte es un algoritmo que se construye de la sucesión de puntos medios de un intervalo incial y cuyo límite se aproxima a la solución buscada \cite{agud2020metodo}:
-	\begin{table}[H] %Opción H para que se muestre donde está
-		\centering %Centrar tabla
-		\begin{tabular}{l c r c} %geometría de la tabla (izquierda, centrado, derecho)
-			% | genera línea en el contenido de la tabla		
-			\toprule %Mostrar línea al inicio de la tabla
-			% Encabezados de las columnas {cuantas columnas abarca, alineación y texto}
-			\multicolumn{1}{c}{\bfseries Iteración} &
-			\multicolumn{1}{c}{\bfseries a} &
-			\multicolumn{1}{c}{\bfseries b} &
-			\multicolumn{1}{c}{\bfseries c} \\
-			\midrule %Poner línea entre encabezados e información de las filas
-			% & -> separador de columnas, \\ -> separardor de filas
-			f1c1 & f1c2 & f1c3 & f \\
-			f2c1 & f2c2 & f2c3 & f \\
-			f3c1 & f3c2 & f3c3 & f \\
-			\bottomrule %Poner línea al finalizar tabla
-		\end{tabular}
-		\caption{Método de Bisección aplicado a la función del TRIAC} %Nombre de la tabla
-		\label{tbl:la-tabla} %TODO caption lleva su etiqueta
-	\end{table}
-
 	%Agregando fuentes de consulta
 	\bibliographystyle{unsrtnat} %abbrnat es parecido a APA
 	\bibliography{referencias}

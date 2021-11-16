@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Brito Segura Angel
-# Version 2.0
+# Version 1.5
 # Date: 15/11/2021
 # Description: Control de atenuación de luz de una lámpara incandecente
 
@@ -11,12 +11,6 @@
 # License: MIT
 # ## ###############################################
 
-#Librerías para servidor web
-import os
-import sys
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import cgi
-
 import smbus2 #Lectura del puerto serial I2C
 import struct #Conversión de datos binarios a objetos que puede leer Python
 #Importación de la función sleep y strftime del módulo time para control de tiempos
@@ -25,13 +19,6 @@ from time import sleep
 from sys import argv
 #Inicialización de placa virtual (comentar si es implementación en hardware)
 from virtualboards import run_dimmer_board
-
-# Nombre o direccion IP del sistema anfitrion del servidor web
-#address = "localhost"
-address = "192.168.1.254"
-# Puerto en el cual el servidor estara atendiendo solicitudes HTTP
-# El default de un servidor web en produción debe ser 80
-port = 8080
 
 # Dirección del dispositivo I2C
 SLAVE_ADDR = 0x0A # Dirección I2C del Arduino
@@ -42,45 +29,6 @@ i2c = smbus2.SMBus(1)
 
 # Archivo en el cual se muestra ayuda al usuario como ejecutar el programa
 HELP_FILE = './bisa_ayuda_dimm.txt'
-
-frecuencia = 60
-
-factor_potencia = 0 #Se inicia en 0%
-
-class WebServer(BaseHTTPRequestHandler):
-	#Cuando se llama a una página
-	def do_GET(self):
-		self.send_response(200)
-		self.send_header("Content-type", "text/html")
-		self.end_headers()
-		#Escribir el archivo HTML
-		salida = "<!DOCTYPE html><html><head><title>Panel de Control - Raspberry Pi</title>"
-		salida += "</head><body><h1>Control de Atenuador de luz</h1><h2>Frecuencia a: "
-		salida += str(frecuencia)
-		salida += " Hz </h2><h3>"
-		salida += '<form method="POST" enctype="multipart/form-data" action="/"'
-		salida += '<br><label for="potencia">Factor de potencia: </label>'
-		salida += '<input type="number" id="potencia" name="potencia" min="0" max="100"><br>'
-		salida += '<br><label for="tiempo">Tiempo de transicion (segundos): </label>'	
-		salida += '<input type="number" id="tiempo" name="tiempo" min="0" max="10" value="0"><br>'
-		salida += '<br><input type ="submit" value="Enviar valores"></form>'
-		salida += "</body></html>"
-		self.wfile.write(bytes(salida, "utf-8"))
-
-	def do_POST(self):
-		#Manejar la información recibida de la página web
-		ctype, pdict = cgi.parse_header(self.headers.get('Content-type'))
-		pdict['boundary'] = bytes(pdict['boundary'], "utf-8") #Codificar la entrada de datos
-		pdict['CONTENT-LENGTH'] = int(self.headers.get('Content-length')) #Obtener el tamaño de lo recibido
-		if ctype == "multipart/form-data": #Corresponde al método solicitado
-			fields = cgi.parse_multipart(self.rfile, pdict)
-			pf = fields.get('potencia')
-			t = fields.get('tiempo')
-			dimmer(int(pf[0]), int(t[0]))
-		self.send_response(301)
-		self.send_header("Content-type", "text/html")
-		self.send_header("Location", "/")
-		self.end_headers()
 
 #Escribir el retraso de fase (en ms) en Arduino via I2C
 def writePhase(delay):
@@ -144,22 +92,7 @@ def procesa_parametros(num_parametros):
 		frecuencia = 60 #Frecuencia en Hertz
 	return frecuencia
 
-def dimmer(pf, t):
-	global factor_potencia
-	if t == 0:
-		writePhase(powerf2ms(pf, frecuencia))
-	elif (0 < t < 11):
-		diferencia = (pf - factor_potencia)/t
-		for i in range(0,t):
-			sleep(1) #Esperar un segundo
-			factor_potencia = factor_potencia + diferencia
-			writePhase(powerf2ms(factor_potencia, frecuencia))
-	else:
-		print("ERROR: El tiempo de transición es entre 0 y 10 segundos, vuelva a introducir valores.\n")
-	factor_potencia = pf
-
 def main():
-	global frecuencia #Para modificar la variable global
 	param = len(argv) #Número de parámetros recibidos por línea de comandos
 	frecuencia = procesa_parametros(param)
 	#Comentar si es una implementación de hardware
@@ -167,24 +100,36 @@ def main():
 	# Apagando lámpara
 	sleep(1) #Esperar un segundo
 	writePhase(1000/60)
-	# Inicializa una nueva instancia de HTTPServer con el
-	# HTTPRequestHandler definido en este archivo
-	webServer = HTTPServer((address, port), WebServer)
-	print("Servidor iniciado")
-	print ("\tAtendiendo solicitudes en http://{}:{}".format(address, port))
-	try:
-		# Mantiene al servidor web ejecutandose en segundo plano
-		webServer.serve_forever()
-	except KeyboardInterrupt:
-		# Maneja la interrupción de cierre CTRL+C
-		pass
-	except:
-		print(sys.exc_info())
-	# Detiene el servidor web cerrando todas las conexiones
-	webServer.server_close()
-	# Reporta parada del servidor web en consola
-	print("Servidor detenido.")
+	factor_potencia = 0 #Se inicia en 0%
+	while True:
+		try:
+			entrada = input("Introducir factor de potencia (y tiempo de transición): ")
+			valor = entrada.split()
+			num_in = len(valor)
+			if (num_in > 2):
+				print("ERROR: Se introdujeron más de 2 valores a la entrada, vuelva a intentarlo.\n")
+			else:
+				pf = float(valor[0])
+				if num_in > 1:
+					t = int(valor[1])
+					if t == 0:
+						writePhase(powerf2ms(pf, frecuencia))
+					elif (0 < t < 11):
+						diferencia = (pf - factor_potencia)/t
+						for i in range(0,t):
+							sleep(1) #Esperar un segundo
+							factor_potencia = factor_potencia + diferencia
+							writePhase(powerf2ms(factor_potencia, frecuencia))
+					else:
+						print("ERROR: El tiempo de transición es entre 0 y 10 segundos, vuelva a introducir valores.\n")
+				else: #Valor predeterminado de 0 segundos
+					writePhase(powerf2ms(pf, frecuencia))
+				factor_potencia = pf
+		except KeyboardInterrupt:
+			return
+		except:
+			print("ERROR: No se introdujeron valores correctos, vuelva a introducirlos.\n")
+			continue
 
-# Punto de anclaje de la funcion main
-if __name__ == "__main__":
+if __name__ == '__main__':
 	main()

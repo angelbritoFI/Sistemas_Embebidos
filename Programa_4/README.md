@@ -4,6 +4,13 @@
 * Control de versiones del código utilizado
 
 ## Código bisa_dimmer_srvr.py
+Para control de atenuador desde servidor web
+| Versión | Descripción | Fecha |
+| -- | -- | -- |
+| 2.0 | Agregando servidor web | 15/11/21 |
+
+## Código bisa_dimmer.py
+Para control de atenuador desde terminal
 | Versión | Descripción | Fecha |
 | -- | -- | -- |
 | 1.0 | Estudio del simulador con su código | 13/11/21 |
@@ -12,7 +19,6 @@
 | 1.3 | Recibiendo parámetro opcional para modificar la frecuencia | 14/11/21 |
 | 1.4 | Agregando conversión de porcentaje para frecuencia de 50 Hz | 14/11/21 |
 | 1.5 | Cambiando gradualmente el brillo de la lámpara | 14/11/21 |
-| 1. |  | 15/11/21 |
 
 ### Autor 
 ***Brito Segura Angel***
